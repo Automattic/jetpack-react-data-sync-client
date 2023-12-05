@@ -1,4 +1,5 @@
 import { z } from 'zod';
+type GetRequestParams = Record<string, string | number | null | Array<string | number | null>>;
 /**
  * DataSync class for synchronizing data between the client and the server.
  *
@@ -72,7 +73,7 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
      * Method to parse the request.
      * @param method - The request method.
      * @param requestPath - The request path.
-     * @param params - The request parameters.
+     * @param value - The request parameters.
      * @param abortSignal - The abort signal.
      * @returns The parsed value.
      */
@@ -91,13 +92,13 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
      * to be bound to the class instance, to make it easier to pass them
      * around as callbacks without losing the `this` context.
      */
-    GET: (abortSignal?: AbortSignal) => Promise<Value>;
-    SET: (params: Value, abortSignal?: AbortSignal) => Promise<Value>;
-    MERGE: (params: Value, abortSignal?: AbortSignal) => Promise<Value>;
-    DELETE: (abortSignal?: AbortSignal) => Promise<Value>;
+    GET: (params?: GetRequestParams, abortSignal?: AbortSignal) => Promise<Value>;
+    SET: (value: Value, params?: GetRequestParams, abortSignal?: AbortSignal) => Promise<Value>;
+    DELETE: (params?: GetRequestParams, abortSignal?: AbortSignal) => Promise<Value>;
     /**
      * Method to get the initial value from the window object.
      * @returns The initial value.
      */
     getInitialValue: () => z.TypeOf<Schema>;
 }
+export {};
