@@ -1,4 +1,6 @@
 import { z } from 'zod';
+import type { JSONSchema } from './types';
+export type RequestParams = string | JSONSchema;
 type GetRequestParams = Record<string, string | number | null | Array<string | number | null>>;
 /**
  * DataSync class for synchronizing data between the client and the server.
@@ -68,6 +70,17 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
      * @returns The parsed value.
      */
     private getWindowValue;
+    /**
+     * Method to make a request to the endpoint.
+     * @param method - The request method.
+     * @param partialPathname - The request path.
+     * @param value - Data to send when using POST.
+     * @param params - Append query params to the URL. Takes in an object of key/value pairs.
+     * @param abortSignal - The abort signal.
+     * @returns The parsed value.
+     * @throws ApiError
+     * @throws Error
+     */
     private request;
     /**
      * Method to parse the request.
@@ -95,6 +108,13 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
     GET: (params?: GetRequestParams, abortSignal?: AbortSignal) => Promise<Value>;
     SET: (value: Value, params?: GetRequestParams, abortSignal?: AbortSignal) => Promise<Value>;
     DELETE: (params?: GetRequestParams, abortSignal?: AbortSignal) => Promise<Value>;
+    /**
+     * Trigger an endpoint action
+     * @param name - The name of the action.
+     * @param value - The value to send to the endpoint.
+     * @returns A direct response from the endpoint.
+     */
+    ACTION: <T extends RequestParams, R extends z.ZodType<any, z.ZodTypeDef, any>>(name: string, value: T, schema: R) => Promise<z.TypeOf<R>>;
     /**
      * Method to get the initial value from the window object.
      * @returns The initial value.

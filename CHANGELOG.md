@@ -14,5 +14,6 @@ This is an alpha version! The changes listed here are not final.
 - Init
 
 ### Changed
+- Add DataSync Actions
 - React data sync updates.
 - Updated package dependencies.
