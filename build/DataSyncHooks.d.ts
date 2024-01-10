@@ -47,7 +47,7 @@ export declare function useDataSync<Schema extends z.ZodSchema, Value extends z.
  */
 export type DataSyncActionConfig<ActionRequestSchema extends z.ZodSchema, ActionRequestData extends z.infer<ActionRequestSchema>, StateSchema extends z.ZodSchema, ActionSchema extends z.ZodSchema, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>> = {
     /**
-     * The project namespace, fore example: 'jetpack_boost_ds'
+     * The project namespace, for example: 'jetpack_boost_ds'
      */
     namespace: string;
     /**

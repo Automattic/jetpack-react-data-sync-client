@@ -15,5 +15,6 @@ This is an alpha version! The changes listed here are not final.
 
 ### Changed
 - Add DataSync Actions
+- Added useDataSyncAction hook
 - React data sync updates.
 - Updated package dependencies.
