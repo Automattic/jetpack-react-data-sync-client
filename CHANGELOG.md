@@ -18,3 +18,6 @@ This is an alpha version! The changes listed here are not final.
 - Added useDataSyncAction hook
 - React data sync updates.
 - Updated package dependencies.
+
+### Fixed
+- Added default param for callbacks to prevent crashes when none provided
