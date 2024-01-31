@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This is an alpha version! The changes listed here are not final.
 
+### Changed
+- React DataSync Client: Enhanced Error Handling and Debugging
+
 ### Fixed
 - React DataSync Client: Use abortController to control mutation requests
 

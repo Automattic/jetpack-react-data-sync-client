@@ -91,6 +91,7 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
      * @returns The parsed value.
      */
     private parsedRequest;
+    private describeSelf;
     /**
      * Method to attempt the request.
      * @param url - The request URL.
