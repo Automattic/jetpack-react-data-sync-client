@@ -14,6 +14,7 @@ This is an alpha version! The changes listed here are not final.
 
 ### Fixed
 - React DataSync Client: Use abortController to control mutation requests
+- WP JS DataSync: Try to prevent fatal errors in production as much as possible.
 
 ## 0.1.0 - 2024-01-22
 ### Added
