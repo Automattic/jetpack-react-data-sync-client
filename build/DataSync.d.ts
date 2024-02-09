@@ -93,6 +93,11 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
     private parsedRequest;
     private describeSelf;
     /**
+     * A debugging utility -
+     * Method to request a teapot response.
+     */
+    private maybeRequestDisabled;
+    /**
      * Method to attempt the request.
      * @param url - The request URL.
      * @param args - The request arguments.
