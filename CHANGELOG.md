@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 This is an alpha version! The changes listed here are not final.
 
+### Added
+- Add a way to invalidate queries.
+
 ### Changed
 - React DataSync Client: Enhanced Error Handling and Debugging
 - React DataSync Client: Improve error resitance. Added new debugging features and improvements to existing functionality.

@@ -6,6 +6,7 @@ import { z } from 'zod';
  * All of the functions below will have to be moved to a factory wrapper
  */
 export declare const queryClient: QueryClient;
+export declare function invalidateQuery(key: string): void;
 /**
  * React Query Provider for DataSync.
  * This is necessary for React Query to work.
