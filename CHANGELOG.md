@@ -13,6 +13,7 @@ This is an alpha version! The changes listed here are not final.
 - Add a way to invalidate queries.
 
 ### Changed
+- DataSync: Add `useDataSyncSubset`
 - React DataSync Client: Enhanced Error Handling and Debugging
 - React DataSync Client: Improve error resitance. Added new debugging features and improvements to existing functionality.
 - Update build configuration to better match supported target environments.
