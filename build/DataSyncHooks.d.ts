@@ -103,7 +103,7 @@ export type DataSyncActionConfig<ActionRequestSchema extends z.ZodSchema, Action
      */
     params?: Record<string, string | number>;
 };
-export declare function useDataSyncAction<StateSchema extends z.ZodSchema, ActionSchema extends z.ZodSchema, ActionRequestSchema extends z.ZodSchema, ActionRequestData extends z.infer<ActionRequestSchema>, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>>({ namespace, key, action_name, schema, callbacks, mutationOptions, params, }: DataSyncActionConfig<ActionRequestSchema, ActionRequestData, StateSchema, ActionSchema, ActionResult, CurrentState>): any;
+export declare function useDataSyncAction<StateSchema extends z.ZodSchema, ActionSchema extends z.ZodSchema, ActionRequestSchema extends z.ZodSchema, ActionRequestData extends z.infer<ActionRequestSchema>, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>>({ namespace, key, action_name, schema, callbacks, mutationOptions, params, }: DataSyncActionConfig<ActionRequestSchema, ActionRequestData, StateSchema, ActionSchema, ActionResult, CurrentState>): UseMutationResult<DataSyncMutation<CurrentState>, unknown, ActionRequestData, unknown>;
 type SubsetMutation<T> = {
     mutate: (newValue: T) => void;
     isSuccess: boolean;
