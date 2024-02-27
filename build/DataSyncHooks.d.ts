@@ -1,6 +1,7 @@
 import { type UseQueryOptions, type UseQueryResult, type UseMutationOptions, type UseMutationResult, QueryClient } from '@tanstack/react-query';
 import React from 'react';
 import { z } from 'zod';
+import { DataSyncError } from './DataSyncError';
 /**
  * @REACT-TODO This is temporary. We need to allow each app to define their own QueryClient.
  * All of the functions below will have to be moved to a factory wrapper
@@ -29,7 +30,7 @@ type DataSyncConfig<Schema extends z.ZodSchema, Value extends z.infer<Schema>> =
  */
 type DataSyncHook<Schema extends z.ZodSchema, Value extends z.infer<Schema>> = [
     UseQueryResult<Value>,
-    UseMutationResult<Value>
+    UseMutationResult<Value, DataSyncError | Error, Value>
 ];
 /**
  * React Query hook for DataSync.
@@ -102,7 +103,7 @@ export type DataSyncActionConfig<ActionRequestSchema extends z.ZodSchema, Action
      */
     params?: Record<string, string | number>;
 };
-export declare function useDataSyncAction<StateSchema extends z.ZodSchema, ActionSchema extends z.ZodSchema, ActionRequestSchema extends z.ZodSchema, ActionRequestData extends z.infer<ActionRequestSchema>, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>>({ namespace, key, action_name, schema, callbacks, mutationOptions, params, }: DataSyncActionConfig<ActionRequestSchema, ActionRequestData, StateSchema, ActionSchema, ActionResult, CurrentState>): UseMutationResult<DataSyncMutation<CurrentState>, unknown, ActionRequestData, unknown>;
+export declare function useDataSyncAction<StateSchema extends z.ZodSchema, ActionSchema extends z.ZodSchema, ActionRequestSchema extends z.ZodSchema, ActionRequestData extends z.infer<ActionRequestSchema>, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>>({ namespace, key, action_name, schema, callbacks, mutationOptions, params, }: DataSyncActionConfig<ActionRequestSchema, ActionRequestData, StateSchema, ActionSchema, ActionResult, CurrentState>): any;
 type SubsetMutation<T> = {
     mutate: (newValue: T) => void;
     isSuccess: boolean;
