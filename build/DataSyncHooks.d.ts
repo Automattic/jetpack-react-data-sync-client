@@ -106,10 +106,12 @@ export type DataSyncActionConfig<ActionRequestSchema extends z.ZodSchema, Action
 export declare function useDataSyncAction<StateSchema extends z.ZodSchema, ActionSchema extends z.ZodSchema, ActionRequestSchema extends z.ZodSchema, ActionRequestData extends z.infer<ActionRequestSchema>, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>>({ namespace, key, action_name, schema, callbacks, mutationOptions, params, }: DataSyncActionConfig<ActionRequestSchema, ActionRequestData, StateSchema, ActionSchema, ActionResult, CurrentState>): UseMutationResult<DataSyncMutation<CurrentState>, unknown, ActionRequestData, unknown>;
 type SubsetMutation<T> = {
     mutate: (newValue: T) => void;
+    isIdle: boolean;
     isSuccess: boolean;
     isPending: boolean;
     isError: boolean;
     error: Error | null;
+    reset: () => void;
 };
 export declare function useDataSyncSubset<Schema extends z.ZodSchema, Value extends z.infer<Schema>, K extends keyof Value>(hook: DataSyncHook<Schema, Value>, key: K): [Value[K], SubsetMutation<Value[K]>];
 export {};
