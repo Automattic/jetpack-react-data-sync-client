@@ -57,26 +57,26 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
      * This would make a request to: http://localhost/wp-json/namespace/key
      *
      * @param namespace - The namespace of the endpoint. This matches the name of the global variable (window.{namespace}.{endpoint_name}).
-     * @param key - The key of the value that's being synced. This is used to fetch the value from the global window object.
-     * @param schema - The Zod schema to validate the value against. This ensures that the value is of the expected type.
+     * @param key       - The key of the value that's being synced. This is used to fetch the value from the global window object.
+     * @param schema    - The Zod schema to validate the value against. This ensures that the value is of the expected type.
      */
     constructor(namespace: string, key: string, schema: Schema);
     /**
      * Helper function to get values
      * from the window object and validate them.
      *
-     * @param valueName - The name of the value. For example, `posts`.
+     * @param valueName   - The name of the value. For example, `posts`.
      * @param valueSchema - The Zod schema to validate the value against.
      * @returns The parsed value.
      */
     private getWindowValue;
     /**
      * Method to make a request to the endpoint.
-     * @param method - The request method.
+     * @param method          - The request method.
      * @param partialPathname - The request path.
-     * @param value - Data to send when using POST.
-     * @param params - Append query params to the URL. Takes in an object of key/value pairs.
-     * @param abortSignal - The abort signal.
+     * @param value           - Data to send when using POST.
+     * @param params          - Append query params to the URL. Takes in an object of key/value pairs.
+     * @param abortSignal     - The abort signal.
      * @returns The parsed value.
      * @throws ApiError
      * @throws Error
@@ -84,9 +84,9 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
     private request;
     /**
      * Method to parse the request.
-     * @param method - The request method.
+     * @param method      - The request method.
      * @param requestPath - The request path.
-     * @param value - The request parameters.
+     * @param value       - The request parameters.
      * @param abortSignal - The abort signal.
      * @returns The parsed value.
      */
@@ -99,7 +99,7 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
     private maybeRequestDisabled;
     /**
      * Method to attempt the request.
-     * @param url - The request URL.
+     * @param url  - The request URL.
      * @param args - The request arguments.
      * @returns The result of the request.
      */
@@ -116,7 +116,7 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
     DELETE: (params?: GetRequestParams, abortSignal?: AbortSignal) => Promise<Value>;
     /**
      * Trigger an endpoint action
-     * @param name - The name of the action.
+     * @param name  - The name of the action.
      * @param value - The value to send to the endpoint.
      * @returns A direct response from the endpoint.
      */
