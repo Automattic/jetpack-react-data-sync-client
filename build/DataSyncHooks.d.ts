@@ -15,7 +15,7 @@ export declare function invalidateQuery(key: string): void;
  */
 export declare function DataSyncProvider(props: {
     children: React.ReactNode;
-}): JSX.Element;
+}): any;
 /**
  * React Query configuration type for DataSync.
  */
