@@ -15,6 +15,9 @@ This is an alpha version! The changes listed here are not final.
 ### Changed
 - Updated package dependencies.
 
+### Fixed
+- Fix potential race condition if multiple requests are triggered
+
 ## [0.1.9] - 2025-01-23
 ### Changed
 - Internal updates.
