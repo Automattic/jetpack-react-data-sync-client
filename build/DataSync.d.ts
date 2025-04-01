@@ -120,7 +120,7 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
      * @param value - The value to send to the endpoint.
      * @returns A direct response from the endpoint.
      */
-    ACTION: <T extends RequestParams, R extends z.ZodType<any, z.ZodTypeDef, any>>(name: string, value: T, schema: R) => Promise<z.TypeOf<R>>;
+    ACTION: <T extends RequestParams, R extends z.ZodSchema>(name: string, value: T, schema: R) => Promise<z.infer<R>>;
     /**
      * Method to get the initial value from the window object.
      * @returns The initial value.
