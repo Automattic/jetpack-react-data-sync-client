@@ -1,7 +1,7 @@
 import { type UseQueryOptions, type UseQueryResult, type UseMutationOptions, type UseMutationResult, QueryClient } from '@tanstack/react-query';
-import React from 'react';
 import { z } from 'zod';
 import { DataSyncError } from './DataSyncError';
+import type { ReactNode } from 'react';
 /**
  * @REACT-TODO This is temporary. We need to allow each app to define their own QueryClient.
  * All of the functions below will have to be moved to a factory wrapper
@@ -14,7 +14,7 @@ export declare function invalidateQuery(key: string): void;
  * @see https://tanstack.com/query/v5/docs/react/reference/QueryClientProvider
  */
 export declare function DataSyncProvider(props: {
-    children: React.ReactNode;
+    children: ReactNode;
 }): any;
 /**
  * React Query configuration type for DataSync.
