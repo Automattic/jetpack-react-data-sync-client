@@ -14,7 +14,7 @@ This is an alpha version! The changes listed here are not final.
 
 ## [0.1.21] - 2025-08-21
 ### Added
-- Added typecheck script to ensure that the TS files are type-checked. [#44795]
+- Add `typecheck` script to ensure that TypeScript files are type-checked. [#44795]
 
 ### Changed
 - Update dependencies. [#44736]
