@@ -1,6 +1,6 @@
 {
 	"name": "@automattic/jetpack-react-data-sync-client",
-	"version": "0.1.22",
+	"version": "0.1.23-alpha",
 	"private": true,
 	"description": "DataSync client for React",
 	"homepage": "https://github.com/Automattic/jetpack/tree/HEAD/projects/js-packages/react-data-sync-client/#readme",
@@ -39,7 +39,7 @@
 		"react-dom": "^18.0.0",
 		"tslib": "2.5.0",
 		"typescript": "5.9.2",
-		"webpack": "5.94.0",
+		"webpack": "5.101.3",
 		"webpack-cli": "6.0.1",
 		"zod": "3.25.76"
 	}
