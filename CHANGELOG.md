@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.32-alpha] - unreleased
+
+This is an alpha version! The changes listed here are not final.
+
+### Changed
+- Update dependencies.
+
 ## [0.1.31] - 2026-04-13
 ### Changed
 - Update dependencies. [#47600]
@@ -169,6 +176,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Added default param for callbacks to prevent crashes when none provided [#34910]
 
+[0.1.32-alpha]: https://github.com/Automattic/jetpack-react-data-sync-client/compare/v0.1.31...v0.1.32-alpha
 [0.1.31]: https://github.com/Automattic/jetpack-react-data-sync-client/compare/v0.1.30...v0.1.31
 [0.1.30]: https://github.com/Automattic/jetpack-react-data-sync-client/compare/v0.1.29...v0.1.30
 [0.1.29]: https://github.com/Automattic/jetpack-react-data-sync-client/compare/v0.1.28...v0.1.29
