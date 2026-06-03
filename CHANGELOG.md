@@ -14,6 +14,9 @@ This is an alpha version! The changes listed here are not final.
 - Update dependencies.
 - Update package dependencies.
 
+### Fixed
+- Remove the React Query devtools from DataSyncProvider so the TanStack debugger no longer renders in consuming apps.
+
 ## [0.1.31] - 2026-04-13
 ### Changed
 - Update dependencies. [#47600]
