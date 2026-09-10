@@ -1,6 +1,6 @@
 {
 	"name": "@automattic/jetpack-react-data-sync-client",
-	"version": "0.2.0",
+	"version": "0.2.1-alpha",
 	"private": true,
 	"description": "DataSync client for React",
 	"homepage": "https://github.com/Automattic/jetpack/tree/HEAD/projects/js-packages/react-data-sync-client/#readme",
@@ -31,7 +31,7 @@
 		"watch": "tsgo --watch"
 	},
 	"dependencies": {
-		"@tanstack/react-query": "5.101.2"
+		"@tanstack/react-query": "5.102.8"
 	},
 	"peerDependencies": {
 		"react": "^18.0.0",

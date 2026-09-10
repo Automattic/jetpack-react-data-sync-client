@@ -68,7 +68,6 @@ function useDataSync(namespace, key, schema, config = {}, params = {}) {
      * 		} );
      * ```
      */
-    // eslint-disable-next-line @tanstack/query/exhaustive-deps -- Sticking `datasync` in the key seems wrong, but what would be right?
     const queryConfigDefaults = {
         queryKey,
         queryFn: ({ signal }) => datasync.GET(params, signal),
