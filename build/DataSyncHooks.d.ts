@@ -1,6 +1,7 @@
 import { type UseQueryOptions, type UseQueryResult, type UseMutationOptions, type UseMutationResult, QueryClient } from '@tanstack/react-query';
 import { z } from 'zod';
 import { DataSyncError } from './DataSyncError';
+import type { AnySchema } from './types';
 import type { ReactNode } from 'react';
 /**
  * @REACT-TODO This is temporary. We need to allow each app to define their own QueryClient.
@@ -21,14 +22,14 @@ export declare function DataSyncProvider(props: {
  */
 type DataSyncMutation<Value> = Omit<UseMutationOptions<Value>, 'mutationKey'>;
 type DataSyncQuery<Value> = Omit<UseQueryOptions<Value>, 'queryKey'>;
-type DataSyncConfig<Schema extends z.ZodSchema, Value extends z.infer<Schema>> = {
+type DataSyncConfig<Schema extends AnySchema, Value extends z.infer<Schema>> = {
     query?: DataSyncQuery<Value>;
     mutation?: DataSyncMutation<Value>;
 };
 /**
  * This is what `useDataSync` returns
  */
-type DataSyncHook<Schema extends z.ZodSchema, Value extends z.infer<Schema>> = [
+type DataSyncHook<Schema extends AnySchema, Value extends z.infer<Schema>> = [
     UseQueryResult<Value>,
     UseMutationResult<Value, DataSyncError | Error, Value>
 ];
@@ -43,11 +44,11 @@ type DataSyncHook<Schema extends z.ZodSchema, Value extends z.infer<Schema>> = [
  * @see https://tanstack.com/query/v5/docs/react/reference/useQuery
  * @see https://tanstack.com/query/v5/docs/react/reference/useMutation
  */
-export declare function useDataSync<Schema extends z.ZodSchema, Value extends z.infer<Schema>, Key extends string>(namespace: string, key: Key, schema: Schema, config?: DataSyncConfig<Schema, Value>, params?: Record<string, string | number>): DataSyncHook<Schema, Value>;
+export declare function useDataSync<Schema extends AnySchema, Value extends z.infer<Schema>, Key extends string>(namespace: string, key: Key, schema: Schema, config?: DataSyncConfig<Schema, Value>, params?: Record<string, string | number>): DataSyncHook<Schema, Value>;
 /**
  * Use React Query mutations to dispatch custom DataSync Actions.
  */
-export type DataSyncActionConfig<ActionRequestSchema extends z.ZodSchema, ActionRequestData extends z.infer<ActionRequestSchema>, StateSchema extends z.ZodSchema, ActionSchema extends z.ZodSchema, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>> = {
+export type DataSyncActionConfig<ActionRequestSchema extends AnySchema, ActionRequestData extends z.infer<ActionRequestSchema>, StateSchema extends AnySchema, ActionSchema extends AnySchema, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>> = {
     /**
      * The project namespace, for example: 'jetpack_boost_ds'
      */
@@ -103,7 +104,7 @@ export type DataSyncActionConfig<ActionRequestSchema extends z.ZodSchema, Action
      */
     params?: Record<string, string | number>;
 };
-export declare function useDataSyncAction<StateSchema extends z.ZodSchema, ActionSchema extends z.ZodSchema, ActionRequestSchema extends z.ZodSchema, ActionRequestData extends z.infer<ActionRequestSchema>, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>>({ namespace, key, action_name, schema, callbacks, mutationOptions, params, }: DataSyncActionConfig<ActionRequestSchema, ActionRequestData, StateSchema, ActionSchema, ActionResult, CurrentState>): UseMutationResult<DataSyncMutation<CurrentState>, unknown, ActionRequestData, unknown>;
+export declare function useDataSyncAction<StateSchema extends AnySchema, ActionSchema extends AnySchema, ActionRequestSchema extends AnySchema, ActionRequestData extends z.infer<ActionRequestSchema>, ActionResult extends z.infer<ActionSchema>, CurrentState extends z.infer<StateSchema>>({ namespace, key, action_name, schema, callbacks, mutationOptions, params, }: DataSyncActionConfig<ActionRequestSchema, ActionRequestData, StateSchema, ActionSchema, ActionResult, CurrentState>): UseMutationResult<DataSyncMutation<CurrentState>, unknown, ActionRequestData, unknown>;
 type SubsetMutation<T> = {
     mutate: (newValue: T) => void;
     isIdle: boolean;
@@ -113,5 +114,5 @@ type SubsetMutation<T> = {
     error: Error | null;
     reset: () => void;
 };
-export declare function useDataSyncSubset<Schema extends z.ZodSchema, Value extends z.infer<Schema>, K extends keyof Value>(hook: DataSyncHook<Schema, Value>, key: K): [Value[K], SubsetMutation<Value[K]>];
+export declare function useDataSyncSubset<Schema extends AnySchema, Value extends z.infer<Schema>, K extends keyof Value>(hook: DataSyncHook<Schema, Value>, key: K): [Value[K], SubsetMutation<Value[K]>];
 export {};

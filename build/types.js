@@ -8,5 +8,5 @@ const zod_1 = require("zod");
  * https://github.com/colinhacks/zod
  */
 const literalSchema = zod_1.z.union([zod_1.z.string(), zod_1.z.number(), zod_1.z.boolean(), zod_1.z.null()]);
-exports.jsonSchema = zod_1.z.lazy(() => zod_1.z.union([literalSchema, zod_1.z.array(exports.jsonSchema), zod_1.z.record(exports.jsonSchema)]));
+exports.jsonSchema = zod_1.z.lazy(() => zod_1.z.union([literalSchema, zod_1.z.array(exports.jsonSchema), zod_1.z.record(zod_1.z.string(), exports.jsonSchema)]));
 //# sourceMappingURL=types.js.map

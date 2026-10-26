@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import type { JSONSchema } from './types';
+import type { AnySchema, JSONSchema } from './types';
 export type RequestParams = string | JSONSchema;
 type GetRequestParams = Record<string, string | number | null | Array<string | number | null>>;
 /**
@@ -16,7 +16,7 @@ type GetRequestParams = Record<string, string | number | null | Array<string | n
  *
  * Note: The keys are converted to be snake_case in Objects, but kebab-case in URLs.
  */
-export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<Schema>> {
+export declare class DataSync<Schema extends AnySchema, Value extends z.infer<Schema>> {
     private schema;
     /**
      * WordPress REST API Endpoint configuration.
@@ -120,11 +120,11 @@ export declare class DataSync<Schema extends z.ZodSchema, Value extends z.infer<
      * @param value - The value to send to the endpoint.
      * @returns A direct response from the endpoint.
      */
-    ACTION: <T extends RequestParams, R extends z.ZodSchema>(name: string, value: T, schema: R) => Promise<z.infer<R>>;
+    ACTION: <T extends RequestParams, R extends AnySchema>(name: string, value: T, schema: R) => Promise<z.infer<R>>;
     /**
      * Method to get the initial value from the window object.
      * @returns The initial value.
      */
-    getInitialValue: () => z.TypeOf<Schema>;
+    getInitialValue: () => z.infer<Schema>;
 }
 export {};

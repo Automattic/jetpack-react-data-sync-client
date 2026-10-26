@@ -1,8 +1,9 @@
 import { z } from 'zod';
+export type AnySchema = z.ZodType<any>;
 /**
  * A syncable value with a nonce that's parsed by Zod.
  */
-export type ParsedValue<T extends z.ZodSchema> = {
+export type ParsedValue<T extends AnySchema> = {
     value: z.infer<T>;
     nonce: string;
 };
@@ -19,7 +20,7 @@ export type SyncedStoreError<T> = {
  * Straight out of the docs:
  * https://github.com/colinhacks/zod
  */
-declare const literalSchema: z.ZodUnion<[z.ZodString, z.ZodNumber, z.ZodBoolean, z.ZodNull]>;
+declare const literalSchema: z.ZodUnion<readonly [z.ZodString, z.ZodNumber, z.ZodBoolean, z.ZodNull]>;
 type Literal = z.infer<typeof literalSchema>;
 type Json = Literal | {
     [key: string]: Json;
