@@ -27,8 +27,7 @@ This is an alpha version! The changes listed here are not final.
 ### Changed
 - Build with tsgo instead of webpack. The package no longer bundles its dependencies: react and zod are now peer dependencies, and @tanstack/react-query is a regular dependency. [#50526]
 - Update dependencies. [#50235]
-- Update package dependencies. [#50510]
-- Update package dependencies. [#50582]
+- Update package dependencies. [#50510] [#50582]
 
 ## [0.1.35] - 2026-06-26
 ### Changed
@@ -80,8 +79,7 @@ This is an alpha version! The changes listed here are not final.
 
 ## [0.1.25] - 2025-11-25
 ### Changed
-- Update package dependencies. [#45932]
-- Update package dependencies. [#45958]
+- Update package dependencies. [#45932] [#45958]
 
 ## [0.1.24] - 2025-10-28
 ### Changed
@@ -93,8 +91,7 @@ This is an alpha version! The changes listed here are not final.
 
 ## [0.1.22] - 2025-09-17
 ### Changed
-- Update package dependencies. [#44901]
-- Update package dependencies. [#45097]
+- Update package dependencies. [#44901] [#45097]
 
 ## [0.1.21] - 2025-08-21
 ### Added
